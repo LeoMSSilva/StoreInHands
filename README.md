@@ -11,6 +11,8 @@
 [![Forks](https://img.shields.io/github/forks/LeoMSSilva/storeInHands?color=blue&style=flat-square)](https://github.com/LeoMSSilva/storeInHands/network/members)
 [![Contributors](https://img.shields.io/github/contributors/LeoMSSilva/storeInHands?color=blue&style=flat-square)](https://github.com/LeoMSSilva/storeInHands/graphs/contributors)
 
+Access to layout on: [Figma](https://www.figma.com/file/hredFAOIsOIG230izOVNm8) 
+
 ---
 
 # :pushpin: Table of Contents
