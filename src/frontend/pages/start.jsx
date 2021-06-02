@@ -1,14 +1,15 @@
 import React from 'react';
-import Text from '../components/text';
-import Button from '../components/button';
+import { Button } from '../components/button';
+import { TextBigBlue } from '../components/text';
+import { Container } from '../style/index';
 
 export default function Start({ navigation }) {
 	return (
-		<>
-			<Text text="Já tem Login?" size="big" color="dark" />
-			<Button text="Entrar" click={() => navigation.navigate('login')} type="normal" />
-			<Text text="Que tal criar uma conta?" size="big" color="dark" />
-			<Button text="Cadastrar" click={() => navigation.navigate('register')} type="normal" />
-		</>
+		<Container>
+			<TextBigBlue text="Já tem login?" />
+			<Button text="Entrar" click={() => navigation.navigate('login')} />
+			<TextBigBlue text="Que tal criar uma conta?" />
+			<Button text="Cadastrar" click={() => navigation.navigate('register')} />
+		</Container>
 	);
 }

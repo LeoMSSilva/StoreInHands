@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
-import Text from '../components/text';
-import {useUser} from '../contexts/userContext';
+import { TextBigBlue, TextBig, Text } from '../components/text';
+import { useUser } from '../contexts/userContext';
+import { Container } from '../style/index';
 
 export default function Welcome({ navigation }) {
 	const { user } = useUser();
@@ -9,10 +10,10 @@ export default function Welcome({ navigation }) {
 	}, []);
 
 	return (
-		<>
-			<Text text="Olá," size="Big" />
-			<Text text={user} size="Big" color="dark" />
+		<Container>
+			<TextBig text="Olá," />
+			<TextBigBlue text={user} />
 			<Text text="Agora vamos começar as gerenciar suas listas." />
-		</>
+		</Container>
 	);
 }

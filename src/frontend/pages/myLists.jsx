@@ -1,12 +1,13 @@
 import React from 'react';
-import Text from '../components/text';
-import Button from '../components/button';
+import { ButtonDelete } from '../components/button';
+import { Title } from '../components/text';
+import { Container } from '../style/index';
 
 export default function MyLists() {
 	return (
-		<>
-			<Text text="Minhas Listas" />
-			<Button type="Delete" />
-		</>
+		<Container>
+			<Title text="Minhas Listas" />
+			<ButtonDelete click="true" />
+		</Container>
 	);
 }

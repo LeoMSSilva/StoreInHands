@@ -1,15 +1,16 @@
 import React from 'react';
-import Text from '../components/text';
-import Button from '../components/button';
-import Input from '../components/input';
+import { TextBigBlue } from '../components/text';
+import { Button } from '../components/button';
+import { InputPassorwd, InputText } from '../components/input';
+import { Container } from '../style/index';
 
 export default function Login({ navigation }) {
 	return (
-		<>
-			<Text size="big" color="dark" text="Vamos lá!" />
-			<Input placeholder="Digite seu e-mail" />
-			<Input placeholder="Digite sua senha" type="password" />
-			<Button text="Entrar" click={() => navigation.navigate('welcome')} type="normal" />
-		</>
+		<Container>
+			<TextBigBlue text="Vamos lá!" />
+			<InputText placeholder="Digite seu e-mail" />
+			<InputPassorwd placeholder="Digite sua senha" />
+			<Button text="Entrar" click={() => navigation.navigate('welcome')} />
+		</Container>
 	);
 }

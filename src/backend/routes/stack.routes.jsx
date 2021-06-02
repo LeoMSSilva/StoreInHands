@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import Colors from '../../frontend/colors';
+import Colors from '../../frontend/style/colors';
 
 import Splash from '../../frontend/pages/splash';
 import Start from '../../frontend/pages/start';
