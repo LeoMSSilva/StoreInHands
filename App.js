@@ -1,10 +1,10 @@
 import React from 'react';
 import Routes from './src/backend/routes';
-import Login from './src/frontend/pages/login';
+import MyLists from './src/frontend/pages/myLists';
 
 const App = () => (
 	<>
-		<Login></Login>
+		<MyLists></MyLists>
 	</>
 );
 

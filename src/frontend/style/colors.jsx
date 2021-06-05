@@ -4,4 +4,5 @@ export default {
 	myDark: '#076aff',
 	myDelete: '#ff0707',
 	myWhite: '#ffffff',
+	myGray: '#666d69',
 };
