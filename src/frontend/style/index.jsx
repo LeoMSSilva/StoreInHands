@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import Colors from './colors'
 
 export const Container = styled.SafeAreaView`
 	display: flex;
 	flex: 1;
 	align-items: center;
 	justify-content: center;
-	background-color: ${Colors.myBackground};
+	background-color: #81b3ff;
 	margin: 0;
 	padding: 0;
 `;
