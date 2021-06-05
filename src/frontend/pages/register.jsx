@@ -1,19 +1,17 @@
 import React from 'react';
-import { TextBigBlue } from '../components/text';
-import { Button } from '../components/button';
-import { InputPassorwd, InputText } from '../components/input';
 import { Container } from '../style/index';
+import { BlueTitle } from '../components/BlueTitle';
+import { GrayInput } from '../components/GrayInput';
+import { ButtonBlue } from '../components/ButtonBlue';
 
-export default function Register({ navigation }) {
+export default function Register() {
 	return (
 		<Container>
-			<TextBigBlue text="Vamos lá!" />
-			<InputText placeholder="Digite seu usuário" />
-			<InputText placeholder="Digite seu e-mail" />
-			<InputText placeholder="Repetir seu e-mail" />
-			<InputPassorwd placeholder="Digite sua senha" />
-			<InputPassorwd placeholder="Repetir sua senha" />
-			<Button text="Cadastrar" click={() => navigation.navigate('welcome')} />
+			<BlueTitle>Vamos lá!</BlueTitle>
+			<GrayInput place="Digite seu usuário"></GrayInput>
+			<GrayInput place="Digite seu e-mail" type="email-address"></GrayInput>
+			<GrayInput place="Digite sua senha" secure={true}></GrayInput>
+			<ButtonBlue>Cadastrar</ButtonBlue>
 		</Container>
 	);
 }
