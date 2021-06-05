@@ -1,14 +1,14 @@
 {
 	"expo": {
-		"name": "storeInHands",
-		"slug": "storeInHands",
+		"name": "StoreInHands",
+		"slug": "StoreInHands",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/icon.png",
 		"splash": {
 			"image": "./assets/splash.png",
 			"resizeMode": "cover",
-			"myBackgroundColor": "#e6f0ff"
+			"backgroundColor": "#e6f0ff"
 		},
 		"updates": {
 			"fallbackToCacheTimeout": 0
@@ -16,12 +16,12 @@
 		"assetBundlePatterns": ["**/*"],
 		"ios": {
 			"supportsTablet": true,
-			"bundleIdentifier": "com.leomssilva.storeInHands"
+			"bundleIdentifier": "com.leomssilva.StoreInHands"
 		},
 		"android": {
 			"adaptiveIcon": {
 				"foregroundImage": "./assets/adaptive-icon.png",
-				"myBackgroundColor": "#e6f0ff"
+				"backgroundColor": "#e6f0ff"
 			}
 		},
 		"web": {
