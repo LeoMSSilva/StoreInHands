@@ -1,10 +1,12 @@
 import React from 'react';
 import Routes from './src/backend/routes';
 import Login from './src/frontend/pages/login';
+import Register from './src/frontend/pages/register'
 
 const App = () => (
 	<>
-		<Login></Login>
+		{/* <Register></Register> */}
+        <Login></Login>
 	</>
 );
 
