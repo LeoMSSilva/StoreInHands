@@ -5,8 +5,8 @@ import Register from './src/frontend/pages/register'
 
 const App = () => (
 	<>
-		{/* <Register></Register> */}
-        <Login></Login>
+		<Register></Register>
+        {/* <Login></Login> */}
 	</>
 );
 
