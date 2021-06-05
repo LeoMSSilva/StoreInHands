@@ -1,12 +1,12 @@
 import React from 'react';
 import Routes from './src/backend/routes';
-import Login from './src/frontend/pages/login';
-import Register from './src/frontend/pages/register'
+
+import MyLists from './src/frontend/pages/myLists';
 
 const App = () => (
 	<>
-		<Register></Register>
-        {/* <Login></Login> */}
+		<MyLists></MyLists>
+
 	</>
 );
 
