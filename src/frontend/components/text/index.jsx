@@ -10,7 +10,7 @@ export function TextBigBlue({ text }) {
 }
 
 export function TextBig({ text }) {
-	<TextBigLight>{text}</TextBigLight>;
+	return <TextBigLight>{text}</TextBigLight>;
 }
 
 export function Text({ text }) {
