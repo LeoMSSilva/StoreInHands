@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
 import firebase from 'firebase';
 import 'firebase/auth';
@@ -56,4 +56,11 @@ const UsuarioProvider = ({ children }) => {
   )
 }
 
-export { UsuarioContext, UsuarioProvider }
+
+
+function useUser() {
+	const { user, setUser, singUp, singIn, singOut } = useContext(UsuarioContext);
+	return { user, setUser, singUp, singIn, singOut };
+}
+
+export { UsuarioContext, UsuarioProvider, useUser };

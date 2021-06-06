@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+const {signIn, user} =  useContext(UsuarioContext);
 
 // import Welcome from '../../frontend/pages/welcome';
 import MyLists from '../../frontend/pages/myLists';
@@ -16,3 +17,5 @@ const InRoutes = () => (
 );
 
 export default InRoutes;
+
+

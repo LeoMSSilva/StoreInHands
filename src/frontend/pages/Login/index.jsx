@@ -8,7 +8,7 @@ import Colors from '../../style/colors';
 import {UsuarioContext} from '../../../backend/contexts/usuario'
 
 export default function Login({navigation}) {
-	const {signUp} =  useContext(UsuarioContext);
+	const {signIn, user} =  useContext(UsuarioContext);
 	const [carregando, setCarregando] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
