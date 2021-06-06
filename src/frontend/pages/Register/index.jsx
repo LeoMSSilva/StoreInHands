@@ -1,25 +1,29 @@
 import React, { useState, useContext } from 'react';
 import { Container } from '../../style/index';
 import { BlueTitle } from '../../components/BlueTitle';
-import { GrayInput } from '../../components/GrayInput';
-import { ButtonBlue, SmallBlue } from '../../components/ButtonBlue';
-import { InputField, Button, TextButton, SmallButton } from './styles';
+import { InputField, Button, TextButton, SmallButton } from './style';
 import Colors from '../../style/colors';
 
-export default function Login({navigation}) {
+export default function Register({navigation}) {
 	const [carregando, setCarregando] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	function handleSignIn() {
-		// alert('clicou');
-		// console.warn('clicou');
+	
 
+	function handleSignUp() {
+		setCarregando(true);
 		try {
-			signIn(email, password);
+			signUp(email, password);
 		} catch (err) {
 			console.warn(err);
+		} finally {
+			setCarregando(false);
 		}
+
+		// setTimeout(() => {
+		//   setCarregando(false);
+		// }, 4000);
 	}
 
 	return (
@@ -40,12 +44,12 @@ export default function Login({navigation}) {
 			></InputField>
 
 			<Button>
-				<TextButton font="20px" color={Colors.myWhite} onPress={() => { handleSignIn() }}>
-					Entrar
+				<TextButton font="20px" color={Colors.myWhite} onPress={() => { handleSignUp() }}>
+					Cadastrar
 				</TextButton>
 			</Button>
 			<SmallButton>
-			<TextButton font="13px" color={Colors.myDark} onPress={()=> navigation.navigate('register')}> Cadastre-se</TextButton>
+			<TextButton font="13px" color={Colors.myDark} onPress={()=> navigation.navigate('login')}> Voltar</TextButton>
 		</SmallButton>
 		</Container>
 	);

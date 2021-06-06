@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import Login from '../../frontend/pages/Login';
-// import Register from '../../frontend/pages/register';
+import Register from '../../frontend/pages/Register';
 
 const stackRoutes = createStackNavigator();
 
@@ -11,7 +11,7 @@ const OutRoutes = () => (
 	<stackRoutes.Navigator headerMode="none">
 
 		<stackRoutes.Screen name="login" component={Login} />
-		{/* <stackRoutes.Screen name="register" component={Register} /> */}
+		<stackRoutes.Screen name="register" component={Register} />
 	</stackRoutes.Navigator>
 );
 
