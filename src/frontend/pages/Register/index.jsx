@@ -3,8 +3,10 @@ import { Container } from '../../style/index';
 import { BlueTitle } from '../../components/BlueTitle';
 import { InputField, Button, TextButton, SmallButton } from './style';
 import Colors from '../../style/colors';
+import {UsuarioContext} from '../../../backend/contexts/usuario'
 
 export default function Register({navigation}) {
+	const{signUp}=  useContext(UsuarioContext);
 	const [carregando, setCarregando] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');

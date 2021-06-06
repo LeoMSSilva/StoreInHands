@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-// // import { useUser } from '../contexts/userContext';
+import {UsuarioContext } from '../contexts/usuario';
 import InRoutes from './in.routes';
 import OutRoutes from './out.routes';
 
-// // const { user } = useUser();
+// const {user} =  useContext(UsuarioContext);
 
 const Routes = () => (
 	<NavigationContainer>
