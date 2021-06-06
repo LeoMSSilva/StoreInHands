@@ -8,10 +8,10 @@ export default function Register() {
 	return (
 		<Container>
 			<BlueTitle>Vamos lá!</BlueTitle>
-			<GrayInput place="Digite seu usuário"></GrayInput>
+			{/* {/* <GrayInput place="Digite seu usuário"></GrayInput> */}
 			<GrayInput place="Digite seu e-mail" type="email-address"></GrayInput>
-			<GrayInput place="Digite sua senha" secure={true}></GrayInput>
-			<ButtonBlue>Cadastrar</ButtonBlue>
+			<GrayInput place="Digite sua senha" secure={true}></GrayInput> */}
+			{/* <ButtonBlue>Cadastrar</ButtonBlue> */}
 		</Container>
 	);
 }
