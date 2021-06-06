@@ -1,6 +1,7 @@
 import React from 'react';
-import {BigText} from './style';
+import {BigText, SmallText} from './style';
 
 export function BlueTitle({ children }) {
 	return (<BigText >{children}</BigText>);
 }
+

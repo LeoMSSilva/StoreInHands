@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import Colors from '../../style/colors';
 
 export const InputField = styled.TextInput.attrs({
 	placeholderTextColor: '#ccc',

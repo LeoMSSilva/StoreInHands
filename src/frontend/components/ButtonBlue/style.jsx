@@ -11,6 +11,13 @@ export const Button =  styled.TouchableOpacity`
 	border-radius: 20px;
 `;
 
+export const SmallButton =  styled.TouchableOpacity`
+    padding: 20px 0;
+	align-items: center;
+	border: none;
+`;
+
 export const TextButton = styled.Text`
-    color: ${Colors.myWhite};
+    color: ${props => props.color};
+    font-size: ${props => props.font};
 `
