@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { Container } from '../../style/index';
 import { BlueTitle } from '../../components/BlueTitle';
-import { SmallBlue } from '../../components/ButtonBlue';
 import { GrayInput } from '../../components/GrayInput';
-import { ButtonBlue } from '../../components/ButtonBlue';
+import { ButtonBlue, SmallBlue } from '../../components/ButtonBlue';
+import { InputField, Button, TextButton, SmallButton } from './styles';
+import Colors from '../../style/colors';
 
 export default function Login() {
 	const [carregando, setCarregando] = useState(false);
@@ -15,7 +16,6 @@ export default function Login() {
 		// console.warn('clicou');
 
 		try {
-			console.warn(email, password);
 			signIn(email, password);
 		} catch (err) {
 			console.warn(err);
@@ -40,26 +40,28 @@ export default function Login() {
 	return (
 		<Container>
 			<BlueTitle>Vamos lá!</BlueTitle>
-			<GrayInput
-				place="Digite seu e-mail"
-				type="email-address"
-				oCT={(email) => setEmail(email)}
+
+			<InputField
+				placeholder="Digite seu e-mail"
+				keyboardType="email-address"
+				onChangeText={(email) => setEmail(email)}
 				value={email}
-			></GrayInput>
-			<GrayInput place="Digite sua senha" secure={true} oCT={(pass) => setPassword(pass)} value={password}></GrayInput>
-			<ButtonBlue
-				onPress={() => {
-					handleSignIn();
-				}}
-			>
-				Entrar
-			</ButtonBlue>
-			<SmallBlue>Cadastre-se</SmallBlue>
+			></InputField>
+			<InputField
+				placeholder="Digite sua senha"
+				secureTextEntry={true}
+				onChangeText={(pass) => setPassword(pass)}
+				value={password}
+			></InputField>
+
+			<Button>
+				<TextButton font="20px" color={Colors.myWhite} onPress={() => { handleSignIn() }}>
+					Entrar
+				</TextButton>
+			</Button>
+			<SmallButton>
+			<TextButton font="13px" color={Colors.myDark}> Cadastre-se</TextButton>
+		</SmallButton>
 		</Container>
 	);
-}
-
-function GrayInput({place, secure=false, type="default", oCT, value}) {
-	console.warn(value)
-	return <InputField placeholder={place} secureTextEntry={secure} keyboardType={type} onChangeText={oCT} value={value}></InputField>;
 }
