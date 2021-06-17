@@ -1,16 +1,12 @@
 import React from 'react';
+import { UserProvider } from './src/backend/contexts/user';
 import Routes from './src/backend/routes';
-import Register from './src/frontend/pages/Register'
-import Login from './src/frontend/pages/Login'
-import MyLists from './src/frontend/pages/myLists';
-import {UsuarioProvider} from './src/backend/contexts/usuario'
-
 import './src/backend/services/firebase';
+
 const App = () => (
-	<UsuarioProvider>
-		<Routes></Routes>
-		{/* <Register></Register> */}
-	</UsuarioProvider>
+	<UserProvider>
+		<Routes />
+	</UserProvider>
 );
 
 export default App;

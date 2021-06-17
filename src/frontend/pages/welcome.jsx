@@ -1,39 +1,22 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import { Container } from '../style/index';
-import Colors from '../style/colors';
+import { StatusBar } from 'react-native';
+import { Container, Row } from '../styles/index';
+import { TextBigBlue, TextBig, Text } from '../components/text';
 
-export default function Welcome({userName="Usuário"}) {
+export default function Welcome({ navigation, userName = 'Léo' }) {
+	useEffect(() => {
+		setTimeout(() => navigation.navigate('lists'), 1500);
+	}, []);
+
 	return (
 		<Container>
-			<TextBlock><TextBlockHigh>Olá,</TextBlockHigh> <TextHighLight >{userName}</TextHighLight></TextBlock>
-			<TextBlock>Agora vamos começar a</TextBlock>
-			<TextBlock>gerenciar suas listas.</TextBlock>
+			<StatusBar />
+			<Row>
+				<TextBig text="Olá, " />
+				<TextBigBlue text={userName} />
+			</Row>
+			<Text text={`Agora vamos começar`} />
+			<Text text={`a gerenciar suas listas.`} />
 		</Container>
 	);
 }
-
-const TextBlock = styled.Text`
-	justify-content: center;
-	font-size: 17px;
-	color: ${Colors.myGray};
-	margin: 0;
-	padding: 0;
-`;
-
-const TextBlockHigh = styled.Text`
-	justify-content: center;
-	font-size: 22px;
-	color: ${Colors.myGray};
-	margin: 0;
-	padding: 0;
-`;
-
-const TextHighLight = styled.Text`
-	justify-content: center;
-	font-weight: 900;
-	font-size: 24px;
-	color: ${Colors.myDark};
-	margin: 0;
-	padding: 0;
-`;

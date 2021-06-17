@@ -1,17 +1,43 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-
-import Login from '../../frontend/pages/Login';
-import Register from '../../frontend/pages/Register';
+import Splash from '../../frontend/pages/splash';
+import Login from '../../frontend/pages/login';
+import Register from '../../frontend/pages/register';
 
 const stackRoutes = createStackNavigator();
 
-const OutRoutes = () => (
-	<stackRoutes.Navigator headerMode="none">
+const screenOptions = {
+	title: '',
+	headerTransparent: true,
+};
 
-		<stackRoutes.Screen name="login" component={Login} />
-		<stackRoutes.Screen name="register" component={Register} />
+const OutRoutes = () => (
+	<stackRoutes.Navigator screenOptions={screenOptions}>
+		<stackRoutes.Screen
+			name="splash"
+			component={Splash}
+			options={() => ({
+				headerRight: () => <></>,
+				headerLeft: () => <></>,
+			})}
+		/>
+		<stackRoutes.Screen
+			name="login"
+			component={Login}
+			options={() => ({
+				headerRight: () => <></>,
+				headerLeft: () => <></>,
+			})}
+		/>
+		<stackRoutes.Screen
+			name="register"
+			component={Register}
+			options={() => ({
+				headerRight: () => <></>,
+				headerLeft: () => <></>,
+			})}
+		/>
 	</stackRoutes.Navigator>
 );
 
