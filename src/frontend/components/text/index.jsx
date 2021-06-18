@@ -16,10 +16,7 @@ export function TextBig({ text }) {
 export function Text({ text }) {
 	return <TextLight>{text}</TextLight>;
 }
-<<<<<<< HEAD
-=======
 
 export function Tag({ text }) {
 	return <Tags>{text}</Tags>;
 }
->>>>>>> origin/develop
