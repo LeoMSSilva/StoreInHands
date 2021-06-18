@@ -1,46 +1,35 @@
 import styled from 'styled-components/native';
+import Colors from '../../styles/colors';
 
+//@ts-ignore
+export const ButtonIcon = styled.TouchableOpacity``;
+
+//@ts-ignore
+export const TextButton = styled.Text`
+	font-size: ${({ invert }) => (invert ? '14px' : '20px')};
+	color: ${({ invert }) => (invert ? Colors.myDark : Colors.myWhite)};
+`;
+
+//@ts-ignore
 export const CustonButton = styled.TouchableOpacity`
-	height: 2rem;
-	width: 8rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 1rem;
-	padding: 1.25rem 1rem;
-	background-color: #076aff;
+	padding: 10px 25px;
+	width: ${({ more }) => (more ? '100%' : '150px')};
+	margin-top: 16px;
+	background-color: ${({ invert }) => (invert ? 'transparent' : Colors.myLight)};
 	border: none;
-	border-radius: 50px;
+	border-radius: 20px;
 `;
 
-export const CustonButtonMais = styled.TouchableOpacity`
-	height: 2rem;
-	width: 4rem;
-	display: flex;
+//@ts-ignore
+export const Card = styled.TouchableOpacity`
+	flex-direction: row;
+	justify-content: space-around;
 	align-items: center;
-	justify-content: center;
-	margin-bottom: 1rem;
-	padding: 1.25rem 1rem;
-	background-color: #076aff;
-	border: none;
-	border-radius: 50px;
-`;
-
-export const CustonButtonDelete = styled.TouchableOpacity`
-	height: 2rem;
-	width: 8rem;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 1rem;
-	padding: 1rem;
-	background-color: #ff0707;
-	border: none;
-	border-radius: 50px;
-`;
-
-export const ButtonText = styled.Text`
-	color: #ffffff;
-	font-size: 16px;
-	font-weight: bold;
+	width: 100%;
+	padding: 20px 0;
+	background-color: ${({ id }) => (id % 2 === 1 ? `${Colors.myLight}` : `${Colors.myDark}`)};
+	opacity: ${({ id }) => (id % 2 === 1 ? 1 : 0.8)};
 `;
