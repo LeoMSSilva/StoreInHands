@@ -1,6 +1,6 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { Keyboard } from 'react-native';
-import { listen, signIn, signUp } from '../services/auth';
+import { listen, signIn, signOut, signUp } from '../services/auth';
 
 export const UserContext = createContext({});
 
@@ -9,16 +9,19 @@ export const UserProvider = ({ children }) => {
 	const [load, setLoad] = useState(false);
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [lists, setLists] = useState([]);
 
-	const access = (access) => {
+	const access = (access, out = false) => {
 		setLoad(true);
 		setTimeout(() => {
 			try {
-				setEmail('');
-				setPassword('');
+				if (!out) {
+					setEmail('');
+					setPassword('');
+					Keyboard.dismiss();
+				}
 				setLoad(false);
-				Keyboard.dismiss();
-				access();
+				access;
 			} catch (e) {
 				console.log(e);
 			}
@@ -28,6 +31,8 @@ export const UserProvider = ({ children }) => {
 	const handleSignIn = async () => access(signIn(email, password));
 
 	const handleSignUp = async () => access(signUp(email, password));
+
+	const handleSignOut = async () => access(signOut(), true);
 
 	const listenAuth = (userState) => setUser(userState);
 
@@ -40,10 +45,13 @@ export const UserProvider = ({ children }) => {
 				load,
 				email,
 				password,
+				lists,
+				setLists,
 				setEmail,
 				setPassword,
 				handleSignIn,
 				handleSignUp,
+				handleSignOut,
 			}}
 		>
 			{children}

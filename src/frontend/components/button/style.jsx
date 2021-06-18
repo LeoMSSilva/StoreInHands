@@ -5,9 +5,6 @@ import Colors from '../../styles/colors';
 export const ButtonIcon = styled.TouchableOpacity``;
 
 //@ts-ignore
-export const ButtonMore = styled.TouchableOpacity``;
-
-//@ts-ignore
 export const TextButton = styled.Text`
 	font-size: ${({ invert }) => (invert ? '14px' : '20px')};
 	color: ${({ invert }) => (invert ? Colors.myDark : Colors.myWhite)};

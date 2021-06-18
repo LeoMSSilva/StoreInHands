@@ -30,16 +30,6 @@ export const TextLight = styled.Text`
 `;
 
 //@ts-ignore
-export const TextContainer = styled.Text`
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: flex-start;
-	font-size: 16px;
-	color: ${Colors.myWhite};
-`;
-
-//@ts-ignore
 export const Tags = styled.Text`
 	align-items: center;
 	justify-content: center;

@@ -5,6 +5,7 @@ import InRoutes from './in.routes';
 import OutRoutes from './out.routes';
 
 function Routes() {
+	//@ts-ignore
 	const { user }  = useContext(UserContext);
 	
 	return (

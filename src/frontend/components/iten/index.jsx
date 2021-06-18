@@ -3,17 +3,16 @@ import { Alert, Platform } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import CurrencyInput from 'react-native-currency-input';
-import { Check, KeyboardCol, KeyboardRow } from '../../styles';
+import { Check, KeyboardRow } from '../../styles';
 import Colors from '../../styles/colors';
 import { InputIten } from '../input/index';
 import { ButtonDelete } from '../button/index';
 import { Card } from '../button/style';
-import { handleBlur } from '../../../backend/services/storage';
 
 export function Iten({ name, quantity, price, id, isSelected, setIsSelected }) {
-	const [pricee, setPricee] = useState(price || 0.0);
-	const [namee, setNamee] = useState(name || '');
-	const [quantityy, setQuantityy] = useState(quantity || 0);
+	const [pricee, setPricee] = useState(price);
+	const [namee, setNamee] = useState(name);
+	const [quantityy, setQuantityy] = useState(quantity);
 	const [update, setUpdate] = useState(false);
 
 	return (
@@ -23,7 +22,7 @@ export function Iten({ name, quantity, price, id, isSelected, setIsSelected }) {
 			id={id}
 			Children={
 				<Card id={id}>
-					<KeyboardRow behavior="padding">
+					<KeyboardRow behavior="height">
 						<Check>
 							<BouncyCheckbox
 								size={18}
@@ -34,13 +33,13 @@ export function Iten({ name, quantity, price, id, isSelected, setIsSelected }) {
 									borderColor: Colors.myBackground,
 								}}
 								onPress={() => {
-									Alert.alert(`${quantityy * pricee}`);
+									Alert.alert(`O preço em quantidade é: R$ ${quantityy * pricee}`);
 									setIsSelected(!isSelected);
 								}}
 							/>
 						</Check>
 
-						<InputIten value={namee} setValue={setNamee} placeholder={namee} width={'40%'} onBlur={handleBlur} />
+						<InputIten value={namee} setValue={setNamee} placeholder={namee} width={'40%'} />
 
 						<CurrencyInput
 							precision={0}
@@ -48,13 +47,12 @@ export function Iten({ name, quantity, price, id, isSelected, setIsSelected }) {
 							value={quantityy}
 							placeholder={`${quantityy}`}
 							keyboardType={'numeric'}
-							onBlur={handleBlur}
 							style={{
 								...Platform.select({ web: { outline: 'none' } }),
-								width: '20%',
+								width: '15%',
 								height: 30,
 								textAlign: 'center',
-								justifyContent: 'flex-start',
+								justifyContent: 'flex-end',
 								fontSize: 16,
 								color: Colors.myWhite,
 							}}
@@ -68,13 +66,12 @@ export function Iten({ name, quantity, price, id, isSelected, setIsSelected }) {
 							separator=","
 							precision={2}
 							keyboardType={'numeric'}
-							onBlur={handleBlur}
 							style={{
 								...Platform.select({ web: { outline: 'none' } }),
-								width: '20%',
+								width: '25%',
 								height: 30,
 								textAlign: 'center',
-								justifyContent: 'flex-start',
+								justifyContent: 'flex-end',
 								fontSize: 16,
 								color: Colors.myWhite,
 							}}
@@ -88,7 +85,7 @@ export function Iten({ name, quantity, price, id, isSelected, setIsSelected }) {
 
 export function List({ title, id }) {
 	const navigation = useNavigation();
-	const [titlee, setTitlee] = useState(title || '');
+	const [titlee, setTitlee] = useState(title);
 	const [update, setUpdate] = useState(false);
 
 	return (
@@ -97,10 +94,10 @@ export function List({ title, id }) {
 			setUpdate={setUpdate}
 			id={id}
 			Children={
-				<Card id={id} onPress={() => navigation.navigate('itens')}>
-					<KeyboardCol behavior="padding">
-						<InputIten value={titlee} setValue={setTitlee} placeholder={titlee} width={'50%'} onBlur={handleBlur} />
-					</KeyboardCol>
+				<Card id={id} onPress={() => navigation.navigate('itens', { id: id })}>
+					<KeyboardRow behavior="height">
+						<InputIten value={titlee} setValue={setTitlee} placeholder={titlee} width={'50%'} />
+					</KeyboardRow>
 				</Card>
 			}
 		/>

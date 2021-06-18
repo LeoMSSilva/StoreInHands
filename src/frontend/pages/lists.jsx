@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Alert, FlatList, StatusBar } from 'react-native';
+import { UserContext } from '../../backend/contexts/user';
 import { lists } from '../../backend/data/objeto';
 import { Container } from '../styles';
 import { Title } from '../components/text';
@@ -7,6 +8,8 @@ import { List } from '../components/iten';
 import { More } from '../components/button';
 
 export default function Lists({ title = 'Listas' }) {
+	//@ts-ignore
+	// const { lists } = useContext(UserContext);
 	return (
 		<Container>
 			<StatusBar />

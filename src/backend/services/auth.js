@@ -8,19 +8,20 @@ export const signUp = (email, password) =>
 	firebase
 		.auth()
 		.createUserWithEmailAndPassword(email, password)
-		.then(() => Alert.alert('Usuario registrado com sucesso'))
+		.then(() => Alert.alert('Registrar','Usuario registrado com sucesso!'))
 		.catch((e) => Alert.alert(e));
 
 export const signIn = (email, password) =>
 	firebase
 		.auth()
 		.signInWithEmailAndPassword(email, password)
-		.then(() => Alert.alert('Usuario logado com sucesso'))
+		// .then(() => Alert.alert('Logar', 'Usuario logado com sucesso!'))
 		.catch((e) => Alert.alert(e));
 
 export const signOut = () =>
 	firebase
 		.auth()
 		.signOut()
-		.then(() => Alert.alert('Usuario deslogado com sucesso'))
+		.then(() => Alert.alert('Deslogar', 'Usuario deslogado com sucesso!'))
+		
 		.catch((e) => Alert.alert(e));

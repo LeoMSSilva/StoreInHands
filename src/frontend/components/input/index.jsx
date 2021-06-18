@@ -10,25 +10,19 @@ export function InputText({ placeholder, setValue, value, password = false, keyb
 			keyboardType={keyboardType}
 			onChangeText={(value) => setValue(value)}
 			value={value}
-			style={{
-				...Platform.select({ web: { outline: 'none' } }),
-			}}
+			style={{ ...Platform.select({ web: { outline: 'none' } }) }}
 		/>
 	);
 }
 
-export function InputIten({ placeholder, setValue, value, width, keyboardType = 'defult', onBlur }) {
+export function InputIten({ placeholder, setValue, value, width }) {
 	return (
 		<ItenInput
 			placeholder={placeholder}
 			onChangeText={setValue}
 			value={value}
-			keyboardType={keyboardType}
-			onBlur={onBlur}
-			style={{
-				...Platform.select({ web: { outline: 'none' } }),
-				width: width,
-			}}
+			keyboardType='default'
+			style={{ ...Platform.select({ web: { outline: 'none' } }), width: width }}
 		/>
 	);
 }

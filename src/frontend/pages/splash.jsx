@@ -9,7 +9,6 @@ export default function Splash({ navigation }) {
 	useEffect(() => {
 		setTimeout(() => navigation.navigate('login'), 2000);
 	}, []);
-
 	return (
 		<Container>
 			<StatusBar />

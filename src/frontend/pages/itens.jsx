@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Alert, FlatList, StatusBar } from 'react-native';
+import { UserContext } from '../../backend/contexts/user';
 import { lists } from '../../backend/data/objeto';
 import { Container, Row } from '../styles';
 import { Title, Tag } from '../components/text';
@@ -7,6 +8,8 @@ import { Iten } from '../components/iten';
 import { More } from '../components/button';
 
 export default function Itens({ title = 'Açougue', id = 0 }) {
+	//@ts-ignore
+	// const { lists } = useContext(UserContext);
 	const [isSelected, setIsSelected] = useState(false);
 	const sum = () => {
 		useEffect(() => {
@@ -40,7 +43,7 @@ export default function Itens({ title = 'Açougue', id = 0 }) {
 					/>
 				)}
 			/>
-			<More onPress={() => Alert.alert('Adicionado novo item na lista!')} />
+			<More onPress={() => Alert.alert('Criado novo item na lista!')} />
 		</Container>
 	);
 }

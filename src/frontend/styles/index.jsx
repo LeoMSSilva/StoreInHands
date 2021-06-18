@@ -24,7 +24,7 @@ export const KeyboardRow = styled.KeyboardAvoidingView`
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
-	width: 90%;
+	width: 100%;
 `;
 
 //@ts-ignore

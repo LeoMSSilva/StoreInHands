@@ -1,7 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Logout, Return } from '../../frontend/components/button';
-import { signOut } from '../services/auth';
 import Welcome from '../../frontend/pages/welcome';
 import Lists from '../../frontend/pages/lists';
 import Itens from '../../frontend/pages/itens';
@@ -20,7 +19,7 @@ const InRoutes = () => (
 			name="lists"
 			component={Lists}
 			options={() => ({
-				headerRight: () => <Logout signOut={signOut} />,
+				headerRight: () => <Logout />,
 				headerLeft: () => <></>,
 			})}
 		/>
@@ -28,7 +27,7 @@ const InRoutes = () => (
 			name="itens"
 			component={Itens}
 			options={({ navigation }) => ({
-				headerRight: () => <Logout signOut={signOut} />,
+				headerRight: () => <Logout />,
 				headerLeft: () => <Return onPress={() => navigation.goBack()} />,
 			})}
 		/>

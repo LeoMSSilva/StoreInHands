@@ -30,15 +30,21 @@ Access to layout on: [Figma](https://www.figma.com/file/hredFAOIsOIG230izOVNm8)
 
 # :house: About
 
-This project was developed with **React Native** and using the **Expo**.
+This project was developed with **React Native** and using **Expo**.
 
-The **React Navigator Stack** to build navigation between the app's screens.
+The **React Navigator Stack** to build navigation between app screens.
 
-**Styled Components** to style the components.
+**Stylized Components** to style the components.
 
-I also got the app icons from the **Expo Vector Icons**.
+**React Native Bouncy Checkbox** and **React Native Currency Input** for custom inputs.
 
-This app is used to search for users on github.
+I also used the **Expo Vector Icons** app icons.
+
+**Firebase** for authentication.
+
+The purpose of this app is to help with shopping, saving time and promoting greater control over your finances.
+Users can create in their account as many lists as they want to be more organized, such as dividing by sectors: a list for production, another for butcher shop, market, among others. This way, they will be more focused regardless of the establishment they are in and will know exactly what to look for to complete the purchase. The application has a price calculator, which allows the user to track expenses by seeing whether they are within budget or not. Each item on the list can be easily deselected in this calculation, so you have control over how much you want to spend.
+
 
 ---
 
@@ -90,11 +96,13 @@ or
 
 - Expo
 - Expo/vector-icons
+- Firebase
 - React
 - React-native
 - React-navigation/native
+- React Native Bouncy Checkbox
+- React Native Currency Input
 - Styled-components
-
 ---
 
 # :bust_in_silhouette: Author

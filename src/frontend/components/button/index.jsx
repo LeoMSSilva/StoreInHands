@@ -1,33 +1,18 @@
-import { Entypo, Feather, Ionicons } from '@expo/vector-icons';
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { ActivityIndicator, Animated, TouchableOpacity, View } from 'react-native';
-import { Swipeable } from 'react-native-gesture-handler';
+import { UserContext } from '../../../backend/contexts/user';
 import { handleDelete, handleUpdate } from '../../../backend/services/storage';
+import { Entypo, Feather, Ionicons } from '@expo/vector-icons';
+import { Swipeable } from 'react-native-gesture-handler';
 import Colors from '../../styles/colors';
-import { ButtonIcon, ButtonMore, Card, CustonButton, TextButton } from './style';
+import { ButtonIcon, CustonButton, TextButton } from './style';
 
-export function Logout({ signOut }) {
-	const [load, setLoad] = useState(false);
+export function Logout() {
+	//@ts-ignore
+	const { load, handleSignOut } = useContext(UserContext);
 	return (
-		<ButtonIcon
-			activeOpacity={0.6}
-			onPress={() => {
-				setLoad(!load);
-				setTimeout(() => {
-					try {
-						signOut();
-						setLoad(false);
-					} catch (e) {
-						console.log(e);
-					}
-				}, 1000);
-			}}
-		>
-			{load ? (
-				<ActivityIndicator size={30} color={Colors.myDark} />
-			) : (
-				<Entypo name={'log-out'} size={30} color={Colors.myDark} />
-			)}
+		<ButtonIcon activeOpacity={0.6} onPress={handleSignOut}>
+			{load ? <ActivityIndicator size={30} color={Colors.myDark} /> : <Entypo name={'log-out'} size={30} color={Colors.myDark} />	}
 		</ButtonIcon>
 	);
 }
@@ -42,13 +27,15 @@ export function Return({ onPress }) {
 
 export function More({ onPress }) {
 	return (
-		<ButtonMore onPress={onPress}>
+		<ButtonIcon onPress={onPress}>
 			<Ionicons name="add-outline" size={42} color={Colors.myDark} />
-		</ButtonMore>
+		</ButtonIcon>
 	);
 }
 
-export function Button({ invert = false, text, onPress, load }) {
+export function Button({ invert = false, text, onPress }) {
+	//@ts-ignore
+	const { load } = useContext(UserContext);
 	return (
 		<CustonButton invert={invert} disabled={load} activeOpacity={0.6} onPress={onPress}>
 			{load ? <ActivityIndicator color={Colors.myWhite} /> : <TextButton invert={invert}>{text}</TextButton>}
